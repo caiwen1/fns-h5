@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>江西蜂鸟运营大数据监控平台</title>
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/base.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+	<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+
+    <style>
+        .t_title{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 2.5em;
+            line-height: 80px;
+            color: #fff;
+        }
+        #chart_map{
+            cursor: pointer;
+        }
+        .t_show{
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 2px;
+            background: #2C58A6;
+            padding: 2px 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+
+<!--header-->
+<div class="header">
+    <div class="bg_header">
+        <div class="header_nav fl t_title">
+            江西蜂鸟运营大数据监控平台
+        </div>
+    </div>
+</div>
+
+<!--main-->
+<div class="data_content"  id='rider' >
+    <div class="data_main">
+        <div class="main_left fl">
+            <div class="left_1 t_btn6" style="cursor: pointer;">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_1.png" alt=""/>
+                  接单量统计
+                </div>
+                <div id="chart_1" class="chart" style="width:100%;height: 280px;"></div>
+            </div>
+            <div class="left_2" style="cursor: pointer;">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_2.png" alt=""/>
+                    &nbsp;&nbsp;运力分析
+                </div>
+				 <div id="chart_2" class="chart t_btn9" style="width:100%;height: 280px;"></div>
+            </div>
+        </div>
+        <div class="main_center fl">
+            <div class="center_text">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                 <!--右下边框-->
+                 <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_3.png" alt=""/>
+                    &nbsp;&nbsp;运营城市
+                </div>
+                <div id="chart_map" style="width:100%;height:610px;"></div>
+            </div>
+        </div>
+        <div class="main_right fr">
+            <div class="right_1">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_4.png" alt=""/>
+                    &nbsp;接单量趋势
+                </div>
+                <div id="chart_3" class="echart t_btn7" style="width:100%;height: 280px;"></div>
+            </div>
+            <div class="right_2">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_5.png" alt=""/>
+                    &nbsp;&nbsp;异常统计
+                </div>
+                <div id="chart_4" class="echart fl t_btn4" style="width:100%;height: 280px;cursor: pointer;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="data_bottom">
+        <div class="bottom_1 fl t_btn5" style="cursor: pointer;">
+            <!--左上边框-->
+            <div class="t_line_box">
+                <i class="t_l_line"></i>
+                <i class="l_t_line"></i>
+            </div>
+            <!--右上边框-->
+            <div class="t_line_box">
+                <i class="t_r_line"></i>
+                <i class="r_t_line"></i>
+            </div>
+            <!--左下边框-->
+            <div class="t_line_box">
+                <i class="l_b_line"></i>
+                <i class="b_l_line"></i>
+            </div>
+                <!--右下边框-->
+                <div class="t_line_box">
+                <i class="r_b_line"></i>
+                <i class="b_r_line"></i>
+            </div>
+            <div class="main_title"  >
+                <img src="./img/t_6.png" alt=""/>
+                &nbsp;昨日骑手分析
+            </div>
+			<!--
+            <div id="chart_5" class="echart fl" style="width:100%;height: 250px;margin-top: 15px;"></div>-->
+			          <div class="main_table t_btn8" >
+                    <table >
+                        <thead>
+                        <tr>
+                            <th>城市</th>
+                            <th>新增骑手</th>
+                            <th>减少骑手</th>
+                            <th>在职骑手</th>
+                        </tr>
+                        </thead>
+                        <tbody  >
+                        <!-- <tr v-for="rider in riderList" >
+                            <td>{{rider.city}}</td>
+                            <td>{{rider.add}}</td>
+                            <td>{{rider.sub}}</td>
+                            <td>{{rider.all}}</td>
+                        </tr> -->
+                       <tr>
+                            <td>北京</td>
+                            <td>122</td>
+                            <td>111</td>
+                            <td>1369</td>
+                        </tr>
+                        <tr>
+                            <td>上海</td>
+                            <td>111</td>
+                            <td>92</td>
+                            <td>1731</td>
+                        </tr>
+                        <tr>
+                            <td>广州</td>
+                            <td>56</td>
+                            <td>32</td>
+                            <td>414</td>
+                        </tr>
+                        <tr>
+                            <td>深圳</td>
+                            <td>56</td>
+                            <td>32</td>
+                            <td>262</td>
+                        </tr>
+                        <tr>
+                            <td>杭州</td>
+                            <td>12</td>
+                            <td>4</td>
+                            <td>277</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+        <div class="bottom_center fl">
+            <div class="bottom_2 fl">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_7.png" alt=""/>
+                    &nbsp;&nbsp;昨日结算单量
+                </div>
+                <div class="main_table t_btn8">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>城市</th>
+                            <th>已结算单量</th>
+                            <th>未结算单量</th>
+                            <th>应结算单量</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                         <!--  <tr v-for="bill in billList" >
+                            <td>{{bill.city}}</td>
+                            <td>{{bill.add}}</td>
+                            <td>{{bill.sub}}</td>
+                            <td>{{bill.all}}</td>
+                        </tr> -->
+                        <tr>
+                            <td>北京</td>
+                            <td>28188</td>
+                            <td>10</td>
+                            <td>28198</td>
+                        </tr>
+                        <tr>
+                            <td>上海</td>
+                            <td>33842</td>
+                            <td>7</td>
+                            <td>33849</td>
+                        </tr>
+                        <tr>
+                            <td>广州</td>
+                            <td>5743</td>
+                            <td>0</td>
+                            <td>5743</td>
+                        </tr>
+                        <tr>
+                            <td>深圳</td>
+                            <td>5851</td>
+                            <td>0</td>
+                            <td>5851</td>
+                        </tr>
+                        <tr>
+                            <td>杭州</td>
+                            <td>4547</td>
+                            <td>4</td>
+                            <td>4551</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="bottom_3 fl">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_7.png" alt=""/>
+					               &nbsp;&nbsp;昨日营业额
+                </div>
+                <div class="main_table t_btn2">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>城市</th>
+                            <th>收入</th>
+                            <th>扣罚</th>
+                            <th>营业额</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                       <!--  <tr v-for="turnover in turnoverList" >
+                            <td>{{turnover.city}}</td>
+                            <td>{{turnover.add}}</td>
+                            <td>{{turnover.sub}}</td>
+                            <td>{{turnover.all}}</td>
+                        </tr> -->
+                       <tr>
+                            <td>北京</td>
+                            <td>257343.6</td>
+                            <td>3481.02</td>
+                            <td>253862.58</td>
+                        </tr>
+                        <tr>
+                            <td>上海</td>
+                            <td>304361.08</td>
+                            <td>6478.19</td>
+                            <td>297882.89</td>
+                        </tr>
+                        <tr>
+                            <td>广州</td>
+                            <td>48878.55</td>
+                            <td>1006.1</td>
+                            <td>47872.45</td>
+                        </tr>
+                        <tr>
+                            <td>深圳</td>
+                            <td>49594.55</td>
+                            <td>835.66</td>
+                            <td>48758.89</td>
+                        </tr>
+                        <tr>
+                            <td>杭州</td>
+                            <td>36773.99</td>
+                            <td>1014.35</td>
+                            <td>35759.64</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_4 fr">
+            <!--左上边框-->
+            <div class="t_line_box">
+                <i class="t_l_line"></i>
+                <i class="l_t_line"></i>
+            </div>
+            <!--右上边框-->
+            <div class="t_line_box">
+                <i class="t_r_line"></i>
+                <i class="r_t_line"></i>
+            </div>
+            <!--左下边框-->
+            <div class="t_line_box">
+                <i class="l_b_line"></i>
+                <i class="b_l_line"></i>
+            </div>
+                <!--右下边框-->
+                <div class="t_line_box">
+                <i class="r_b_line"></i>
+                <i class="b_r_line"></i>
+            </div>
+            <div class="main_title">
+                <img src="./img/t_7.png" alt=""/>
+               &nbsp;&nbsp;昨日异常站点
+            </div>
+            <div class="main_table t_btn3">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>站点名称</th>
+                        <th>异常取消率</th>
+                        <th>差评单量</th>
+                        <th>投诉单量</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                   <!--  <tr v-for="exceptionPoint in exceptionPointList" >
+                            <td>{{exceptionPoint.point}}</td>
+                            <td>{{exceptionPoint.exceptionRate}}</td>
+                            <td>{{exceptionPoint.diff}}</td>
+                            <td>{{exceptionPoint.complaint}}</td>
+                        </tr> -->
+                   <tr>
+                        <td>北京市-建外SOHO</td>
+                        <td>3.65%</td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>上海市-淮海中路站</td>
+                        <td>5.36%</td>
+                        <td>5</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>广州市-猎德站</td>
+                        <td>1.58%</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>深圳市-福田南站</td>
+                        <td>1.92%</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>杭州市-文晖站</td>
+                        <td>2.39%</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="./js/jquery-2.2.1.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/dataTool.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/china.js"></script>
+<script src="./js/hunan.js"></script>
+<script>
+var app = new Vue({
+	  el: '#rider',
+	  data: {
+		//昨天骑手分析
+	    riderList: [
+	      { city: '北京',add: '152',sub: '116',all: '1360'},
+	      { city: '上海',add: '121',sub: '91',all: '1712'},
+	      { city: '广州',add: '52',sub: '22',all: '404'},
+	      { city: '深圳',add: '52',sub: '22',all: '252'},
+	      { city: '杭州',add: '13',sub: '6',all: '275'}
+	    ],
+	  //昨天结算单量
+	    billList: [
+		      { city: '北京',add: '27088',sub: '15',all: '27103'},
+		      { city: '上海',add: '34832',sub: '21',all: '34853'},
+		      { city: '广州',add: '5443',sub: '0',all: '5443'},
+		      { city: '深圳',add: '5551',sub: '0',all: '5551'},
+		      { city: '杭州',add: '4447',sub: '4',all: '4451'}
+		    ],
+		//昨天营业额
+		turnoverList: [
+		    { city: '北京',add: '257343.6',sub: '3481.02',all: '253862.58'},
+		    { city: '上海',add: '304361.08',sub: '6478.19',all: '297882.89'},
+		    { city: '广州',add: '48878.55',sub: '1006.1',all: '47872.45'},
+		    { city: '深圳',add: '49594.55',sub: '835.66',all: '48758.89'},
+		    { city: '杭州',add: '36773.99',sub: '1014.35',all: '35759.64'}
+		  ],
+		//昨天一次站点
+		exceptionPointList: [
+			    { point: '北京市-建外SOHO',exceptionRate: '3.65%',diff: '3',complaint: '1'},
+			    { point: '上海市-淮海中路站',exceptionRate: '5.36%',diff: '5',complaint: '3'},
+			    { point: '广州市-猎地站',exceptionRate: '1.58%',diff: '0',complaint: '0'},
+			    { point: '深圳-福田南站',exceptionRate: '1.92%',diff: '0',complaint: '1'},
+			    { point: '杭州-文晖站',exceptionRate: '2.39%',diff: '1',complaint: '0'}
+		]
+	}
+})
+</script>
+</html>
