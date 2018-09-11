@@ -1,3 +1,3 @@
 # fns_h5
 
-蜂鸟大屏展现
+Spring Boot 模板代码
