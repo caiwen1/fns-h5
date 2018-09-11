@@ -32,7 +32,7 @@ spring:
 mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:sqlmap/*.xml
-  type-aliases-package: com.fengniaojx.mock.domain.entity
+  type-aliases-package: com.boot.mock.domain.entity
 
 logging:
     level:
