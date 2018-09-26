@@ -18,6 +18,7 @@ public class ScheduledTasks {
 	private MobileService mobileService;
 	@Autowired
 	private Properties properties;
+
 	
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 

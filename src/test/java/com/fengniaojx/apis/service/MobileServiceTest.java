@@ -1,11 +1,11 @@
 package com.fengniaojx.apis.service;
 
-import com.fengniaojx.mock.Application;
-import com.fengniaojx.mock.Properties;
-import com.fengniaojx.mock.domain.entity.User;
-import com.fengniaojx.mock.domain.query.MobileQuery;
-import com.fengniaojx.mock.service.MobileService;
-import com.fengniaojx.mock.service.UserService;
+import com.boot.mock.Application;
+import com.boot.mock.Properties;
+import com.boot.mock.domain.entity.User;
+import com.boot.mock.domain.query.MobileQuery;
+import com.boot.mock.service.MobileService;
+import com.boot.mock.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

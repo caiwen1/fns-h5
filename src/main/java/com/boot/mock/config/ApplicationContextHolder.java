@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 
 /**
  *  spring 容器上下文，用过获取单例bean
- * @author DOUBLE
+ * @author caiwen
  */
 public abstract class ApplicationContextHolder {
     private volatile static ApplicationContext applicationContext;

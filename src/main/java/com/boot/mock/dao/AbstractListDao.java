@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * ClassName: AbstractClzssDao  
  * 抽象dao操作
- * @author DOUBLE
+ * @author caiwen
  * @version @param <T>
  */
 @Mapper
