@@ -14,14 +14,15 @@ import org.springframework.context.event.ContextClosedEvent;
 public class AppListener implements ApplicationListener<ApplicationEvent> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AppListener.class);
+
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
         if (event instanceof ContextClosedEvent) {
             if (event.getSource() instanceof AnnotationConfigApplicationContext) {
-//                ComputeRunner.stop();
+
             }
         } else if (event instanceof ApplicationReadyEvent) {
-//            ComputeRunner.start();
+
         }
     }
 }

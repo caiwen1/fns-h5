@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * ClassName: Properties
  * 自定义配置文件属性获取
  *
- * @author DOUBLE
+ * @author caiwen
  */
 @Configuration
 @EnableAutoConfiguration
